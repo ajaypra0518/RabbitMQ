@@ -1,0 +1,17 @@
+C:\Users\Ajay Prajapati\Desktop\Rabbitmq\GenericConsumer\bin\Debug\netcoreapp3.1\GenericConsumer.exe
+C:\Users\Ajay Prajapati\Desktop\Rabbitmq\GenericConsumer\bin\Debug\netcoreapp3.1\GenericConsumer.deps.json
+C:\Users\Ajay Prajapati\Desktop\Rabbitmq\GenericConsumer\bin\Debug\netcoreapp3.1\GenericConsumer.runtimeconfig.json
+C:\Users\Ajay Prajapati\Desktop\Rabbitmq\GenericConsumer\bin\Debug\netcoreapp3.1\GenericConsumer.runtimeconfig.dev.json
+C:\Users\Ajay Prajapati\Desktop\Rabbitmq\GenericConsumer\bin\Debug\netcoreapp3.1\GenericConsumer.dll
+C:\Users\Ajay Prajapati\Desktop\Rabbitmq\GenericConsumer\bin\Debug\netcoreapp3.1\GenericConsumer.pdb
+C:\Users\Ajay Prajapati\Desktop\Rabbitmq\GenericConsumer\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
+C:\Users\Ajay Prajapati\Desktop\Rabbitmq\GenericConsumer\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
+C:\Users\Ajay Prajapati\Desktop\Rabbitmq\GenericConsumer\obj\Debug\netcoreapp3.1\GenericConsumer.csproj.AssemblyReference.cache
+C:\Users\Ajay Prajapati\Desktop\Rabbitmq\GenericConsumer\obj\Debug\netcoreapp3.1\GenericConsumer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ajay Prajapati\Desktop\Rabbitmq\GenericConsumer\obj\Debug\netcoreapp3.1\GenericConsumer.AssemblyInfoInputs.cache
+C:\Users\Ajay Prajapati\Desktop\Rabbitmq\GenericConsumer\obj\Debug\netcoreapp3.1\GenericConsumer.AssemblyInfo.cs
+C:\Users\Ajay Prajapati\Desktop\Rabbitmq\GenericConsumer\obj\Debug\netcoreapp3.1\GenericConsumer.csproj.CoreCompileInputs.cache
+C:\Users\Ajay Prajapati\Desktop\Rabbitmq\GenericConsumer\obj\Debug\netcoreapp3.1\GenericConsumer.csproj.CopyComplete
+C:\Users\Ajay Prajapati\Desktop\Rabbitmq\GenericConsumer\obj\Debug\netcoreapp3.1\GenericConsumer.dll
+C:\Users\Ajay Prajapati\Desktop\Rabbitmq\GenericConsumer\obj\Debug\netcoreapp3.1\GenericConsumer.pdb
+C:\Users\Ajay Prajapati\Desktop\Rabbitmq\GenericConsumer\obj\Debug\netcoreapp3.1\GenericConsumer.genruntimeconfig.cache
