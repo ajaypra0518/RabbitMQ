@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using System.Threading.Channels;
 
 namespace Consumer
 {
@@ -30,6 +31,7 @@ namespace Consumer
                 var body = e.Body.ToArray();
                 var message = Encoding.UTF8.GetString(body);
                 Console.WriteLine(message);
+                channel.BasicAck(e.DeliveryTag, false);
             };
 
             var consumer2 = new EventingBasicConsumer(channel);
@@ -38,10 +40,11 @@ namespace Consumer
                 var body = e.Body.ToArray();
                 var message = Encoding.UTF8.GetString(body);
                 Console.WriteLine(message);
+                channel.BasicAck(e.DeliveryTag, false);
             };
 
-            channel.BasicConsume("demo-queue", true, consumer);
-            channel.BasicConsume("demo-queue-one", true, consumer2);
+            channel.BasicConsume("demo-queue", false, consumer);
+            channel.BasicConsume("demo-queue-one", false, consumer2);
 
             // if we attach diffrent queue to same basic consumer then it will trigger that consumer like the below code will trigger line 28 consumer.Received += 
             // channel.BasicConsume("demo-queue", true, consumer);
