@@ -9,7 +9,17 @@ namespace GenericConsumer.Handlers
     {
         public void HandleMessage(string message)
         {
-            Console.WriteLine("Queue1MessageHandler: "+ message);
+
+
+            if (message.Contains("10") || message.Contains("19"))
+            {
+                throw new Exception("throw exception self");
+
+            }
+            else
+            {
+                Console.WriteLine("Queue1MessageHandler: " + message);
+            }
         }
     }
 }

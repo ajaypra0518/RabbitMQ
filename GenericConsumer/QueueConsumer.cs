@@ -34,8 +34,11 @@ namespace GenericConsumer
         public void StartConsuming()
         {
 
-            
-                foreach (var queueName in _messageHandlers.Keys)
+            //if we put try catch and BasicNack thrown exception then it will go into ready state in rabbitmq after failure and continue retrying againg and again
+            //if we dont catch exception then it will go into unacked state in rabbitmq after failure and do not continue until we restart the application
+
+
+            foreach (var queueName in _messageHandlers.Keys)
                 {
                     //channel.QueueDeclare(queue: queueName, durable: false, exclusive: false, autoDelete: false, arguments: null);
                     //    channel.QueueDeclare(queueName,
@@ -50,16 +53,16 @@ namespace GenericConsumer
                         var body = ea.Body.ToArray();
                         var message = Encoding.UTF8.GetString(body);
                         Task.Run(() =>{
-                            try
-                            {
-                                Thread t = Thread.CurrentThread;
+                        try
+                        {
+                            Thread t = Thread.CurrentThread;
 
                                 Console.WriteLine("Thread Name: {0}", t.ManagedThreadId);
                                 // Get the message handler for the current queue
                                 if (_messageHandlers.TryGetValue(queueName, out var handler))
                                 {
                                     Console.WriteLine("Handler start Thread : {0}", t.ManagedThreadId);
-                                    handler.HandleMessage(message+ t.ManagedThreadId);
+                                    handler.HandleMessage(message);
                                     Console.WriteLine("Handler end Thread : {0}", t.ManagedThreadId);
                                 }
                                 else
@@ -70,17 +73,17 @@ namespace GenericConsumer
                                     defaultHandler.HandleMessage(message);
                                 }
                                 _channel.BasicAck(ea.DeliveryTag, false);
-                            }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine($"Error processing message: {ex.Message}");
-                                // Reject (Nack) the message if processing fails
-                                _channel.BasicNack(ea.DeliveryTag, false, true);
-                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Error processing message: {ex.Message}");
+                            // Reject (Nack) the message if processing fails
+                            _channel.BasicNack(ea.DeliveryTag, false, true);
+                        }
                         });
-                        
 
-                        
+
+
                     };
 
                     //channel.BasicConsume(queue: queueName, autoAck: true, consumer: consumer);
